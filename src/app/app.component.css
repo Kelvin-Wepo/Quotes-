@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+header a{
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 29px;
+  display: inline-block;
+}
+
+header a:hover{
+  background-color: wheat;
+  color: black;
+  transition: 1.5s;
+  cursor:col-resize;
+}
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
