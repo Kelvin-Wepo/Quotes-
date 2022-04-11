@@ -16,6 +16,6 @@ export class Quotes {
      this.by=by;
      this.date=date;
      this.upvote=upvote;
-     this.downvote;
+     this.downvote=downvote;
     }
 }
