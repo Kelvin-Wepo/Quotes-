@@ -23,3 +23,15 @@ header a:hover{
 .home{
   height: 98vh ;
 }
+#home{
+display: flex; 
+flex-direction: column;
+justify-content: space-around;
+}
+.card{
+  height: 200px;
+  width: 300px;
+}
+ .container-main{
+  width: 380px;
+} 
