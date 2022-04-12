@@ -1,4 +1,4 @@
-# Diverse-Diaries
+# QUOTES
 It is Angular Application that allows users to either up-vote or down-vote a quote and they can also add their own quotes.
 
 ng build --prod --base-href "https://github.com/Kelvin-Wepo/Quotes-" $ npx angular-cli-ghpages --dir=dist/Project-name
