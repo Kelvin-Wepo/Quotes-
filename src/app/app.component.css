@@ -6,7 +6,7 @@
 
 header a{
   text-decoration: none;
-  color: white;
+  /* color: white; */
   padding: 5px;
   border-radius: 7px;
   font-size: 29px;
@@ -14,8 +14,8 @@ header a{
 }
 
 header a:hover{
-  background-color: wheat;
-  color: green;
+  /* background-color: wheat; */
+  /* color: green; */
   transition: 1.5s;
   cursor:col-resize;
 }
@@ -29,9 +29,10 @@ flex-direction: column;
 justify-content: space-around;
 }
 .card{
-  height: 200px;
-  width: 300px;
+  height: 300px;
+  width: 600px;
 }
  .container-main{
   width: 380px;
-} 
+}
+ 
