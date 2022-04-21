@@ -1,129 +1,39 @@
-<header class=" d-flex justify-content-around bg-dark pt-3">
-  <a href=""><b>Quote</b><span><b>App</b></span></a>
+<header class=" d-flex justify-content-around pt-3">
+   <!-- <a href=""><b>Quote</b><span><b>App</b></span></a> -->
 
 </header>
-<!-- <div class="container-main home" id="home">
-    <div class="container-main bg-black d-flex justify-content-center align-items-center m-5">
-      <div class="container myQuote">
-         <div class="row">
-        <div class="col-md-4">   -->
-<!-- <div class=""></div>
-          <ul>
-        <div *ngFor="let quote of quote;let i=index">
-          <div class="card bg-dark text-white text-center">
-            <p>{{quote.quote}}</p>
-          </div>
-        </div>
-      </ul>
-          <br><br>
-             <li> </li>
-            <br><hr> <br>
-           <p>"What we think,we become"</p>
-            <br>
-        </div>
-      </div>
-  </div>
-  <button class="btn btn-primary mt-5">Upvote</button>
-  <button class="btn btn-success mt-5">Downvote</button>
-    <div class="container-main bg-black d-flex justify-content-center align-items-center m-5">
-      <div class="container myQuote">
-         <div class="col-md-4">
-        <div class="card bg-dark text-white text-center">
-          <br><br>
-            <h2 class="">Hello World</h2>
-            <br><hr> <br>
-             <p>"Think for yourself and let others enjoy the priviledge to do so"</p>
-            <br>
-      </div>
-      </div>
-    </div>
-    <button class="btn btn-primary ">Upvote</button>
-    <button class="btn btn-success">Downvote</button>
-    <div class="container-main bg-light d-flex justify-content-center align-items-center m-5">
-      <div class="container myQuote">
-         <div class="col-md-4"> 
-        <div class="card bg-dark text-white text-center">
-          <br><br>
-            <h2 class="">Hello World</h2>
-            <br><hr> <br>
-            <p>"Thinking is the greatest tourture in the world for most people"</p> 
-            <br>
-        </div>
-      </div>
-    </div>
-    <button class="btn btn-primary">Upvote</button>
-        <button class="btn btn-success">Downvote</button>
-    <br><br><br>
-    <div class="container-main">
-      <div class="container add quote">
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Add Quote</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-</div>
-
-      </div>
-     -->
 
 <div class="row mt-5">
-  <div class="col-md-4" *ngFor="let quote of quote;let i = index">
+  <div class="col-md-7" *ngFor="let quote of quote;let i = index">
     <div class="card">
 
       <div class="card-body"></div>
       <h5 class="card-title">{{quote.quote}}</h5>
-      <p>{{quote.author}}</p>
+
+      <p class="author">{{quote.author}}</p>
       <hr>
       <div *ngIf='quote.show'>
+        <app-details></app-details>
       </div>
-      <app-details></app-details>
-      <div class="row">
-        <div class="col-6">
+      <div class="buttons">
+        <div class="upVote">
           <button (click)="upVote (i)" class="btn btn-primary ">Upvote - {{quote.upvote}}</button>
         </div>
-        <div class="col-6">
-          <button (click)="downVote(i)" class="btn btn-danger " style="float: right;">Downvote -
+        <div class="downVote">
+          <button (click)="downVote(i)" class="btn btn-warning " style="float: right;">Downvote -
             {{quote.downvote}}</button>
-          <button type="button" onclick="alert('Are you sure you want to delete this quote?')">Delete Quote</button>
-        </div>
+          </div>
+          <div class="delete">
+            <button class="btn btn-danger col-md-12 mt-9">DeleteQuote</button>
+          </div>
+          <!-- <app-details [quote]='quote!' (isComplete)='deleteQuotes($event,i)'></app-details> -->
+          <!-- <button class="btn btn-danger" (click)="deleteQuotes(true)">Delete Quote</button></div> -->
+       
       </div>
 
     </div>
   </div>
-  <!-- <div class="container">
-    <div class="form mt-5">
-      <form>
-
-        <textarea cols="7" row="10" type="text" class="form-control"></textarea>
-
-      </form>
-
-    </div>
-  </div> -->
-
-
-  <!-- <div class="container-main">
-    <div class="container d-flex justify-content-center align-items-center">
-
-    </div>
-  </div>
-   -->
-   <form>
-    <div class="form-group">
-      <label for="">Name</label>
-      <input type="" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Name">
-      <small id="emailHelp" class="form-text text-muted"></small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputAuthor">Author</label>
-      <input type="Name" class="form-control" id="exampleInputName" placeholder="Author">
-    </div>
-    <div class="form mt-5">
-      <form>
-
-        <textarea cols="7" row="10" type="text" class="form-control"></textarea>
-
-      </form>
-
-    </div>
-    <button type="submit" class="btn btn-primary">Add quote</button>
-  </form>
+</div>
+<div>
+  <app-form (addQuote)="newQuote($event)"></app-form>
+</div>
