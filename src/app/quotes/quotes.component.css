@@ -1,3 +1,28 @@
-.form{
-    width: 50%;
+.card-title{
+    padding: 5%;
+
+}
+.author{
+    padding-left: 6%;
+}
+.card{
+
+margin-bottom: 80px;
+margin-top: 80px;
+margin-left: 80px;
+margin-right: 80px;
+width: 400px;
+height: 300px;
+padding-top: 40px;
+background-color: white; 
+border-radius: 30px;
+border: solid 2px black;
+box-shadow:px 3px orange ;
+backdrop-filter: blur(10px);
+
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 7%;
 }
