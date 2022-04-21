@@ -24,6 +24,35 @@ downVote(index:number){
  toggleDetails(index:number){
   this.quote[index].show =!this.quote[index].show;
 }
+completeQuotes(isComplete, index) {
+  if (isComplete) {
+    this.quote.splice(index, 1);
+  }
+}
+
+// deleteQuotes(isComplete, index) {
+//   if (isComplete) {
+//     let toDelete = confirm('Delete the Quote ?');
+//     if (toDelete) {
+//       this.quote.splice(index, 1);
+//     }
+//   }
+// }
+
+ deleteQuote(complete:boolean,index:number) {
+   if (complete) {
+    let toDelete=confirm(`This action will delete ${this.quote[index].id} are you sure?`)
+    if(toDelete){
+     this.quote.splice(index,1);
+     }
+  }
+ }
+newQuote(quote:Quotes){
+  let quoteLength = this.quote.length;
+quote.id = quoteLength+1;
+this.quote.push(quote)
+}
+
   constructor() { }
 
   ngOnInit(): void {
